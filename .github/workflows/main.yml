@@ -24,9 +24,9 @@ jobs:
         run: |
           docker buildx build \
           --platform linux/amd64 \
-          -t ${{ secrets.DOCKERHUB_USERNAME }}/basic_website \
+          -t ${{ secrets.DOCKERHUB_USERNAME }}/website_deploy \
           . \
           --load
       
       - name: Push Docker Image
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/basic_website
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/website_deploy
